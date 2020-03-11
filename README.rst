@@ -1,7 +1,16 @@
-Hyperspectral processing Scripts for Hy2Geo Dataset
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3706418.svg
+   :target: https://doi.org/10.5281/zenodo.3706418
+   :alt: Zenodo
+
+.. image:: https://img.shields.io/github/license/felixriese/hyperspectral-processing
+    :target: LICENSE
+    :alt: GitHub
+
+Hyperspectral Processing Scripts for Hy2Geo Dataset
 =======================================================
 
-This repository is a placeholder and will be filled with the hyperspectral processing scripts of the Hy2Geo dataset over the next months.
+This repository is a placeholder and will be filled with the hyperspectral
+processing scripts of the Hy2Geo dataset over the next months.
 
 :License:
     `3-Clause BSD license <LICENSE>`_
@@ -27,11 +36,24 @@ Citation
 
 **Code:**
 
-[1]  [Citation of the code will soon be added]
+[1] F. M. Riese, "Hyperspectral Processing Scripts for Hy2Geo Dataset," Zenodo,
+2020.
+
+.. code:: bibtex
+
+    @misc{riese2019processing,
+        author = {Riese, Felix~M.},
+        title = {{Hyperspectral Processing Scripts for Hy2Geo Dataset}},
+        year = {2020},
+        DOI = {10.5281/zenodo.3706418},
+        publisher = {Zenodo},
+        howpublished = {\href{https://doi.org/10.5281/zenodo.3706418}{doi.org/10.5281/zenodo.3706418}}
+    }
 
 **Dataset:**
 
-[2] S. Keller, F. M. Riese, N. Allroggen and C. Jackisch [Full citation of the dataset will soon be added]
+[2] S. Keller, F. M. Riese, N. Allroggen and C. Jackisch [Full citation of the
+dataset will soon be added]
 
 Code is Supplementary Material to
 ---------------------------------------
@@ -39,7 +61,8 @@ Code is Supplementary Material to
 [3] S. Keller, F. M. Riese, N. Allroggen, C. Jackisch, and S. Hinz, “Modeling
 subsurface soil moisture based on hyperspectral data: First results of a
 multilateral field campaign,” in Tagungsband der 37. Wissenschaftlich-
-Technische Jahrestagung der DGPF e.V., vol. 27, Munich, Germany, 2018, pp. 34–48. `Link <https://www.dgpf.de/src/tagung/jt2018/proceedings/proceedings/papers/07_PFGK18_Keller_et_al.pdf>`_
+Technische Jahrestagung der DGPF e.V., vol. 27, Munich, Germany, 2018, pp.
+34–48. `Link <https://www.dgpf.de/src/tagung/jt2018/proceedings/proceedings/papers/07_PFGK18_Keller_et_al.pdf>`_
 
 [4] S. Keller, F. M. Riese, J. Stötzer, P. M. Maier, and S. Hinz, “Developing
 a machine learning framework for estimating soil moisture with VNIR
@@ -54,4 +77,4 @@ Netherlands, 2018, pp. 1–5. `Link <https://arxiv.org/abs/1804.05273>`_
 
 [6] S. Keller, Fusion hyperspektraler, LWIR- und Bodenradar-Daten mit
 maschinellen Lernverfahren zur Bodenfeuchteschätzung, 5th ed. Wichmann, Berlin,
-2019, p. 217–250. 
+2019, p. 217–250.
