@@ -1,7 +1,7 @@
-Processing Scripts for Hy2Geo Dataset
-================================================
+Hyperspectral processing Scripts for Hy2Geo Dataset
+=======================================================
 
-This repository is a placeholder and will be filled with the processing scripts of the Hy2Geo dataset over the next months.
+This repository is a placeholder and will be filled with the hyperspectral processing scripts of the Hy2Geo dataset over the next months.
 
 :License:
     `3-Clause BSD license <LICENSE>`_
