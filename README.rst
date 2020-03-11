@@ -41,7 +41,7 @@ Citation
 
 .. code:: bibtex
 
-    @misc{riese2019processing,
+    @misc{riese2020hyperspectral,
         author = {Riese, Felix~M.},
         title = {{Hyperspectral Processing Scripts for Hy2Geo Dataset}},
         year = {2020},
