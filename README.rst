@@ -6,11 +6,11 @@
     :target: LICENSE
     :alt: GitHub
 
-Hyperspectral Processing Scripts for Hy2Geo Dataset
-=======================================================
+Hyperspectral Processing Scripts for HydReSGeo Dataset
+========================================================
 
 This repository is a placeholder and will be filled with the hyperspectral
-processing scripts of the Hy2Geo dataset over the next months.
+processing scripts of the HydReSGeo dataset over the next months.
 
 :License:
     `3-Clause BSD license <LICENSE>`_
@@ -36,14 +36,14 @@ Citation
 
 **Code:**
 
-[1] F. M. Riese, "Hyperspectral Processing Scripts for Hy2Geo Dataset," Zenodo,
+[1] F. M. Riese, "Hyperspectral Processing Scripts for HydReSGeo Dataset," Zenodo,
 2020.
 
 .. code:: bibtex
 
     @misc{riese2020hyperspectral,
         author = {Riese, Felix~M.},
-        title = {{Hyperspectral Processing Scripts for Hy2Geo Dataset}},
+        title = {{Hyperspectral Processing Scripts for HydReSGeo Dataset}},
         year = {2020},
         DOI = {10.5281/zenodo.3706418},
         publisher = {Zenodo},
@@ -52,8 +52,10 @@ Citation
 
 **Dataset:**
 
-[2] S. Keller, F. M. Riese, N. Allroggen and C. Jackisch [Full citation of the
-dataset will soon be added]
+[2] S. Keller, F. M. Riese, N. Allroggen, and C. Jackisch, "HydReSGeo: Field
+experiment dataset of surface-subsurface infiltration dynamics acquired by
+hydrological, remote sensing, and geophysical measurement techniques" [Full
+citation of the dataset will soon be added]
 
 Code is Supplementary Material to
 ---------------------------------------
