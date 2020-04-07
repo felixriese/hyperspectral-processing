@@ -6,8 +6,8 @@
     :target: LICENSE
     :alt: GitHub
 
-Hyperspectral Processing Scripts for HydReSGeo Dataset
-========================================================
+Hyperspectral Processing Scripts for the HydReSGeo Dataset
+============================================================
 
 This repository is a placeholder and will be filled with the hyperspectral
 processing scripts of the HydReSGeo dataset over the next months.
@@ -36,14 +36,14 @@ Citation
 
 **Code:**
 
-[1] F. M. Riese, "Hyperspectral Processing Scripts for HydReSGeo Dataset," Zenodo,
-2020.
+[1] F. M. Riese, "Hyperspectral Processing Scripts for HydReSGeo Dataset,"
+Zenodo, 2020. `DOI:10.5281/zenodo.3706418 <https://doi.org/10.5281/zenodo.3706418>`_
 
 .. code:: bibtex
 
     @misc{riese2020hyperspectral,
         author = {Riese, Felix~M.},
-        title = {{Hyperspectral Processing Scripts for HydReSGeo Dataset}},
+        title = {{Hyperspectral Processing Scripts for the HydReSGeo Dataset}},
         year = {2020},
         DOI = {10.5281/zenodo.3706418},
         publisher = {Zenodo},
@@ -54,8 +54,21 @@ Citation
 
 [2] S. Keller, F. M. Riese, N. Allroggen, and C. Jackisch, "HydReSGeo: Field
 experiment dataset of surface-subsurface infiltration dynamics acquired by
-hydrological, remote sensing, and geophysical measurement techniques" [Full
-citation of the dataset will soon be added]
+hydrological, remote sensing, and geophysical measurement techniques," GFZ Data
+Services, 2020. `DOI:10.5880/fidgeo.2020.015 <https://doi.org/10.5880/fidgeo.2020.015>`_
+
+.. code:: bibtex
+
+    @misc{keller2020hydresgeo,
+        author = {Keller, Sina and Riese, Felix~M. and Allroggen, Niklas and
+                  Jackisch, Conrad},
+        title = {{HydReSGeo: Field experiment dataset of surface-subsurface
+                  infiltration dynamics acquired by hydrological, remote
+                  sensing, and geophysical measurement techniques}},
+        year = {2020},
+        publisher = {GFZ Data Services},
+        DOI = {10.5880/fidgeo.2020.015},
+    }
 
 Code is Supplementary Material to
 ---------------------------------------
@@ -70,12 +83,12 @@ Technische Jahrestagung der DGPF e.V., vol. 27, Munich, Germany, 2018, pp.
 a machine learning framework for estimating soil moisture with VNIR
 hyperspectral data,” ISPRS Annals of Photogrammetry, Remote Sensing and
 Spatial Information Sciences, vol. IV-1, pp. 101–108, 2018.
-`Link <https://doi.org/10.5194/isprs-annals-IV-1-101-2018>`_
+`DOI:10.5194/isprs-annals-IV-1-101-2018 <https://doi.org/10.5194/isprs-annals-IV-1-101-2018>`_
 
 [5] F. M. Riese and S. Keller, “Fusion of hyperspectral and ground penetrating
 radar data to estimate soil moisture,” in 2018 9th Workshop on Hyperspectral
 Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Amsterdam,
-Netherlands, 2018, pp. 1–5. `Link <https://arxiv.org/abs/1804.05273>`_
+Netherlands, 2018, pp. 1–5. `DOI:10.1109/WHISPERS.2018.8747076 <https://arxiv.org/abs/1804.05273>`_
 
 [6] S. Keller, Fusion hyperspektraler, LWIR- und Bodenradar-Daten mit
 maschinellen Lernverfahren zur Bodenfeuchteschätzung, 5th ed. Wichmann, Berlin,
