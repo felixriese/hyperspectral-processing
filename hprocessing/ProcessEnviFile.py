@@ -1,4 +1,5 @@
-"""Class and functions to process envi file.
+"""
+Class and functions to process envi file.
 
 The package `spectral` is used in this repository with permission by the
 authors (see `spectralpython/spectral/issues/103
@@ -14,7 +15,8 @@ import spectral as spy
 
 
 class ProcessEnviFile():
-    """Class to process ENVI files.
+    """
+    Class to process ENVI files.
 
     Parameters
     ----------
@@ -69,7 +71,8 @@ class ProcessEnviFile():
         self.grid_elements = None
 
     def getMultipleSpectra(self):
-        """Get soil spectrum for measurements with multiple soil spectra.
+        """
+        Get soil spectrum for measurements with multiple soil spectra.
 
         In these measurements, there are multiple spectra measured: the one of
         the spectralon and the multiple soil spectra. The soil spectra are
@@ -110,7 +113,8 @@ class ProcessEnviFile():
         return zones_fields_df
 
     def getEdgesFromPrefix(self, prefix: str):
-        """Get start and end values of edges in rows and columns.
+        """
+        Get start and end values of edges in rows and columns.
 
         These four values describe a rectangle on the hyperspectral image.
 
@@ -134,7 +138,8 @@ class ProcessEnviFile():
     def getMeanSpectrumFromRectangle(self,
                                      edges: list,
                                      mode: str = "median") -> pd.DataFrame:
-        """Get mean spectrum from rectangle area (region of interest, ROI).
+        """
+        Get mean spectrum from rectangle area (region of interest, ROI).
 
         Parameters
         ----------
@@ -182,7 +187,8 @@ class ProcessEnviFile():
         return df_spectrum
 
     def getRealGridSize(self, edges: list):
-        """Calculate grid size.
+        """
+        Calculate grid size.
 
         Parameters
         ----------
@@ -213,7 +219,8 @@ class ProcessEnviFile():
         return (grid_n_rows, grid_n_columns)
 
     def getMeanSpectraFromSquareGrid(self, edges, mode: str = "median"):
-        """Get mean spectra from squared grid area (region of interest, ROI).
+        """
+        Get mean spectra from squared grid area (region of interest, ROI).
 
         Parameters
         ----------
@@ -247,7 +254,8 @@ class ProcessEnviFile():
                              spectra: pd.DataFrame,
                              spectralon: pd.DataFrame,
                              spectralon_factor: float = 0.95) -> pd.DataFrame:
-        """Get calibrated spectra.
+        """
+        Get calibrated spectra.
 
         Parameters
         ----------
@@ -278,12 +286,15 @@ class ProcessEnviFile():
 
 
 def getEdgesForGrid(edges: list, grid_real):
-    """Calculate the grid geometry (edges).
+    """
+    Calculate the grid geometry (edges).
 
     Parameters
     ----------
     edges : list of 4 int
         Edges of the square (row_start, row_end, col_start, col_end)
+    grid_real : (int, int)
+        Number of grid rows and columns
 
     Returns
     -------
@@ -313,7 +324,8 @@ def getEdgesForGrid(edges: list, grid_real):
 
 
 def getEnviFile(filepath):
-    """Read from envi file.
+    """
+    Read from envi file.
 
     The envi files consist of one header file (.hdr) and one image file (.cue).
     The documentation for the ENVI functions can be found here:
@@ -348,7 +360,8 @@ def getEnviFile(filepath):
 
 
 def getEnviHeader(filepath):
-    """Read envi header file.
+    """
+    Read envi header file.
 
     Parameters
     ----------
@@ -369,7 +382,8 @@ def getEnviHeader(filepath):
 
 
 def readEnviHeader(header):
-    """Read out the header of the ENVI file.
+    """
+    Read out the header of the ENVI file.
 
     The documentation of the ENVI Header Files can be found here:
     https://www.harrisgeospatial.com/docs/ENVIHeaderFiles.html
@@ -403,7 +417,8 @@ def readEnviHeader(header):
 
 
 def formatTime(time, ampm):
-    """Format time from 6:02PM to 18:02 (or 10:02PM to 22:02).
+    """
+    Format time from 6:02PM to 18:02 (or 10:02PM to 22:02).
 
     Parameters
     ----------
@@ -427,7 +442,8 @@ def formatTime(time, ampm):
 
 
 def getCalibratedSpectrum(soil, spectralon, spectralon_factor: float = 0.95):
-    """Calibrate hyperspectral spectrum from soil via spectralon.
+    """
+    Calibrate hyperspectral spectrum from soil via spectralon.
 
     Calibrate each bin of the soil spectrum on the respective bin in the
     spectralon (= white reference) spectrum.
@@ -452,7 +468,8 @@ def getCalibratedSpectrum(soil, spectralon, spectralon_factor: float = 0.95):
 
 
 def validateWavelengths(wavelengths: list, bbl: list):
-    """Validate wavelengths and bbl.
+    """
+    Validate wavelengths and bbl.
 
     Parameters
     ----------
@@ -463,7 +480,7 @@ def validateWavelengths(wavelengths: list, bbl: list):
         good quality (1) and which are not (0)
 
     Returns
-    --------
+    -------
     list of int
         Validated `wavelengths` list
     list of int
@@ -489,7 +506,8 @@ def validateWavelengths(wavelengths: list, bbl: list):
 
 
 def removeBadBands(spectrum, wavelengths, bbl):
-    """Remove bands that are marked as bad in bbl list.
+    """
+    Remove bands that are marked as bad in bbl list.
 
     Parameters
     ----------
@@ -519,20 +537,21 @@ def removeBadBands(spectrum, wavelengths, bbl):
 
 
 def convertWavelength(wavelength) -> str:
-    """Convert wavelength into string in nano meter.
+    """
+    Convert wavelength into string in nano meter.
 
     Parameters
-    -----------
+    ----------
     wavelength : str, int, float
         Wavelength in nano meters or micro meters
 
     Returns
-    --------
+    -------
     str
         Wavelength as string
 
     Raises
-    -------
+    ------
     ValueError
         If wavelegnth between 5 and 200
 
@@ -550,7 +569,8 @@ def convertWavelength(wavelength) -> str:
 
 
 def getGridElements(grid: tuple) -> list:
-    """Get elements of a 2-dimensional grid.
+    """
+    Get elements of a 2-dimensional grid.
 
     Parameters
     ----------

@@ -16,7 +16,8 @@ from .IRUtils import getIRDataFromMultipleZones
 
 
 class ProcessFullDataset():
-    """Class to process the full HydReSGeo dataset.
+    """
+    Class to process the full HydReSGeo dataset.
 
     Parameters
     ----------
@@ -113,7 +114,8 @@ class ProcessFullDataset():
         # "zone5": "C1", "zone6": "C2", "zone7": "D1", "zone8": "D2"}
 
     def process(self) -> pd.DataFrame:
-        """Process a full dataset.
+        """
+        Process a full dataset.
 
         Returns
         -------
@@ -167,19 +169,20 @@ class ProcessFullDataset():
         return pd.concat([df_hyp, df_hyd, df_lwir], axis=1)
 
     def getSoilMoistureData(self):
-        """Get soil moisture data.
+        """
+        Get soil moisture data.
 
         To match the dates of the soil moisture measurements and the
         hyperspectral image, the timezones are converted to UTC.
 
         Returns
-        --------
+        -------
         pd.Dataframe
             Dataframe of soil moisture measurements which correspond to the
             hyperspectral image of this instance.
 
         Todo
-        -----
+        ----
         - Move the CSV file read out into process-function outside this file
         - Add an optional time shift correction between soil moisture data and
           the hyperspectral data.
@@ -220,7 +223,8 @@ class ProcessFullDataset():
         return pd.DataFrame(sm_dict)
 
     def getLwirData(self):
-        """Get LWIR data from one of the CSV export files.
+        """
+        Get LWIR data from one of the CSV export files.
 
         This function is based on code from another repository by the authors:
         https://github.com/felixriese/thermal-image-processing
@@ -290,7 +294,8 @@ class ProcessFullDataset():
 
 
 def getMask(masks, index_of_meas, imageshape=(50, 50)):
-    """Mask image with masks from mask.csv file.
+    """
+    Mask image with masks from mask.csv file.
 
     Parameters
     ----------
@@ -336,7 +341,8 @@ def getMask(masks, index_of_meas, imageshape=(50, 50)):
 
 
 def getWoodenBarMask(point1, point2, height, imageshape=(50, 50)):
-    """Get mask for wooden bar.
+    """
+    Get mask for wooden bar.
 
     Parameters
     ----------
@@ -371,7 +377,8 @@ def getWoodenBarMask(point1, point2, height, imageshape=(50, 50)):
 
 
 def getAllSoilMoistureSensors():
-    """Get information about the soil moisture sensors.
+    """
+    Get information about the soil moisture sensors.
 
     Returns
     -------
@@ -395,7 +402,8 @@ def getAllSoilMoistureSensors():
 
 
 def getUppermostSoilMoistureSensors():
-    """Get information about the soil moisture sensors.
+    """
+    Get information about the soil moisture sensors.
 
     Returns
     -------
@@ -414,7 +422,8 @@ def getUppermostSoilMoistureSensors():
 
 
 def findNearestDate(date_list, date):
-    """Find closest datapoint of each uppermost sensor in time window.
+    """
+    Find closest datapoint of each uppermost sensor in time window.
 
     Adapted from https://stackoverflow.com/a/32237949/3816498 .
 
@@ -441,7 +450,8 @@ def findNearestDate(date_list, date):
 def readConfig(config_path: str,
                data_directory: str,
                verbose=0) -> dict:
-    """Read config file to process a dataset.
+    """
+    Read config file to process a dataset.
 
     Parameters
     ----------
@@ -509,7 +519,8 @@ def readConfig(config_path: str,
 
 
 def getLineFromPoints(point1, point2):
-    """Get line parameter (y = mx +c) from two points.
+    """
+    Get line parameter (y = mx +c) from two points.
 
     Parameters
     ----------
@@ -534,7 +545,8 @@ def getLineFromPoints(point1, point2):
 def processHydReSGeoDataset(config_path: str,
                             data_directory: str,
                             verbose=0) -> pd.DataFrame:
-    """Process the full HydReSGeo dataset.
+    """
+    Process the full HydReSGeo dataset.
 
     Parameters
     ----------

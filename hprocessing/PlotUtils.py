@@ -7,10 +7,17 @@ import numpy as np
 from .ProcessEnviFile import convertWavelength, getEdgesForGrid
 
 
-def plotEnviImageWithMask(image, wavelengths, rectangles, mask=None,
-                          grid=(1, 1), channel=3, title="",
-                          imageshape=(50, 50), save_to_file=False):
-    """Plot Envi image with mask.
+def plotEnviImageWithMask(image,
+                          wavelengths: list,
+                          rectangles: list,
+                          mask=None,
+                          grid: tuple = (1, 1),
+                          channel: int = 3,
+                          title: str = "",
+                          imageshape: tuple = (50, 50),
+                          save_to_file: bool = False):
+    """
+    Plot Envi image with mask.
 
     Parameters
     ----------
@@ -18,9 +25,13 @@ def plotEnviImageWithMask(image, wavelengths, rectangles, mask=None,
         Envi Image
     wavelengths : list of int
         List of measured wavelength bands
-    rectangles : TODO
+    rectangles : list of int
+        Rectangle geometry data.
     mask : list of lists
         Mask to be plotted
+    grid : tuple (int, int), optional (default=(1, 1))
+        Size of the grid (rows, columns). If row/column zero, every pixel
+        is one row/column.
     channel : int
         Band/channel of the sensor
     title : str
@@ -77,11 +88,17 @@ def plotEnviImageWithMask(image, wavelengths, rectangles, mask=None,
         plt.show()
 
 
-def plotEnviImageWithRectangles(image, wavelengths, rectangles,
-                                channel=137, title="", imageshape=(50, 50),
-                                includeColorbar=True, fontsize=10,
-                                save_to_file=False):
-    """Plot Envi image with (multiple) rectangle(s).
+def plotEnviImageWithRectangles(image,
+                                wavelengths: list,
+                                rectangles: list,
+                                channel: int = 137,
+                                title: str = "",
+                                imageshape: tuple = (50, 50),
+                                includeColorbar: bool = True,
+                                fontsize: int = 10,
+                                save_to_file: bool = False):
+    """
+    Plot Envi image with (multiple) rectangle(s).
 
     All functions for bsq-files can be found here:
     https://github.com/spectralpython/spectral/blob/master/spectral/io/
