@@ -1,4 +1,14 @@
-"""Class to process full HydReSGeo dataset."""
+"""Class to process full HydReSGeo dataset.
+
+Note: If IRUtils.py is not available, you need to download it before the
+installation of the package into the `hprocessing/` folder:
+
+.. code:: bash
+
+    wget -P hprocessing/ https://raw.githubusercontent.com/felixriese/thermal
+        -image-processing/master/tiprocessing/IRUtils.py
+
+"""
 
 import configparser
 import glob
@@ -11,11 +21,6 @@ from tqdm import tqdm
 
 from .ProcessEnviFile import (ProcessEnviFile, getEnviFile, getEnviHeader,
                               readEnviHeader)
-
-if not os.path.isfile('./IRUtils.py'):
-    print("The file IRUtils.py is missing. Please download it via:")
-    print("> wget -P hprocessing/ https://raw.githubusercontent.com/"
-          "felixriese/thermal-image-processing/master/tiprocessing/IRUtils.py")
 from .IRUtils import getIRDataFromMultipleZones
 
 
