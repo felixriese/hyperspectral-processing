@@ -1,0 +1,15 @@
+dist: xenial
+language: python
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - wget -P hprocessing/ https://raw.githubusercontent.com/felixriese/thermal-image-processing/master/tiprocessing/IRUtils.py
+# command to run tests
+script:
+  - pytest --cov=hprocessing --cov-config .coveragerc
+after_success:
+  - codecov

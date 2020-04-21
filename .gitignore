@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# vscode
+.DS_Store
 .vscode
+hprocessing/IRUtils.py
+data/testfiles/
+data/output/

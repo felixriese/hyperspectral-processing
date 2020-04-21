@@ -24,12 +24,21 @@ processing scripts of the HydReSGeo dataset over the next months.
 :Citation:
     see `Citation`_ and in the `bibtex <bibliography.bib>`_ file
 
+:Documentation:
+    TODO
+
 Sensors
 --------
 
 - **Hyperspectral sensors:** Cubert UHD 285 (VNIR), FLIR Tau2 640 (LWIR), ASD FieldSpec 4 Sensors (VNIR & SWIR)
 - **Hydrological sensor:** IMKO Pico32 (TDR)
 - **Geophysical sensor:** pulseEKKO Pro Ground Penetrating Radar (GPR)
+
+Exemplary notebooks
+--------------------
+
+- `Example_Plots.ipynb <notebooks/Example_Plots.ipynb>`_
+- `Process_HydReSGeo_Dataset.ipynb <notebooks/Process_HydReSGeo_Dataset.ipynb>`_
 
 Citation
 ---------------------------------------
