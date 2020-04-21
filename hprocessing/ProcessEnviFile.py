@@ -569,7 +569,8 @@ def convertWavelength(wavelength) -> str:
 
 
 def getGridElements(grid: tuple) -> list:
-    """Get elements of a 2-dimensional grid.
+    """
+    Get elements of a 2-dimensional grid.
 
     Parameters
     ----------

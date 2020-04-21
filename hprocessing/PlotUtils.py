@@ -97,7 +97,8 @@ def plotEnviImageWithRectangles(image,
                                 includeColorbar: bool = True,
                                 fontsize: int = 10,
                                 save_to_file: bool = False):
-    """Plot Envi image with (multiple) rectangle(s).
+    """
+    Plot Envi image with (multiple) rectangle(s).
 
     All functions for bsq-files can be found here:
     https://github.com/spectralpython/spectral/blob/master/spectral/io/
