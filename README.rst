@@ -5,6 +5,9 @@
 .. image:: https://img.shields.io/github/license/felixriese/hyperspectral-processing
     :target: LICENSE
     :alt: GitHub
+.. image:: https://readthedocs.org/projects/hyperspectral-processing/badge/?version=latest
+    :target: https://hyperspectral-processing.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 Hyperspectral Processing Scripts for the HydReSGeo Dataset
 ============================================================
@@ -25,7 +28,7 @@ processing scripts of the HydReSGeo dataset over the next months.
     see `Citation`_ and in the `bibtex <bibliography.bib>`_ file
 
 :Documentation:
-    TODO
+    `Documentation <https://hyperspectral-processing.readthedocs.io/en/latest/>`_
 
 Sensors
 --------
