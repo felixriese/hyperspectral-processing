@@ -545,8 +545,7 @@ def getLineFromPoints(point1, point2):
 def processHydReSGeoDataset(config_path: str,
                             data_directory: str,
                             verbose=0) -> pd.DataFrame:
-    """
-    Process the full HydReSGeo dataset.
+    """Process the full HydReSGeo dataset.
 
     Parameters
     ----------
