@@ -40,6 +40,11 @@ class ProcessEnviFile():
     grid : tuple (int, int), optional (default=(1, 1))
         Size of the grid (rows, columns). If row/column zero, every pixel
         is one row/column.
+    stat_mode : str
+        Mode for calculating the "mean spectrum". Possible values: median,
+        mean, max, max10 (= maximum of the top 10 pixels), std.
+    spectralon_factor : float, optional (default=0.95)
+        Factor of how much solar radiation the spectralon reflects.
 
     """
 
@@ -51,7 +56,9 @@ class ProcessEnviFile():
                  positions: dict,
                  index_of_meas: int,
                  mask=None,
-                 grid: tuple = (1, 1)):
+                 grid: tuple = (1, 1),
+                 stat_mode: str = "median",
+                 spectralon_factor: float = 0.95):
         """Initialize ProcessEnviFile object."""
         self.image = image
         self.wavelengths_original = wavelengths
@@ -61,6 +68,8 @@ class ProcessEnviFile():
         self.mask = mask
         self.grid = grid
         self.index_of_meas = index_of_meas
+        self.stat_mode = stat_mode
+        self.spectralon_factor = spectralon_factor
 
         self.wavelengths_original, self.bbl_original = validateWavelengths(
             wavelengths=self.wavelengths_original, bbl=self.bbl_original)
@@ -101,11 +110,10 @@ class ProcessEnviFile():
             zone_edges = self.getEdgesFromPrefix(prefix=zone)
 
             df_zone = self.getMeanSpectraFromSquareGrid(
-                edges=zone_edges, mode="median")
+                edges=zone_edges, mode=self.stat_mode)
             df_zone["zone"] = zone
             zone_spectra_cali.append(self.getCalibratedSpectra(
-                spectra=df_zone, spectralon=df_spectralon,
-                spectralon_factor=0.95))
+                spectra=df_zone, spectralon=df_spectralon))
 
         zones_fields_df = pd.concat(zone_spectra_cali,
                                     axis=0, ignore_index=True)
@@ -147,7 +155,7 @@ class ProcessEnviFile():
             Edges of the square (row_start, row_end, col_start, col_end)
         mode : str
             Mode for calculating the "mean spectrum". Possible values: median,
-            mean, max, max10 (= maximum of the top 10 pixels).
+            mean, max, max10 (= maximum of the top 10 pixels), std.
 
         Returns
         -------
@@ -177,6 +185,8 @@ class ProcessEnviFile():
                 spectrum_mean.append(np.max(roi))
             elif mode == "max10":
                 spectrum_mean.append(np.mean(np.sort(roi)[-10:]))
+            elif mode == "std":
+                spectrum_mean.append(np.std(roi))
 
         wavelengths, spectrum_mean = removeBadBands(
             spectrum=spectrum_mean, wavelengths=self.wavelengths_original,
@@ -228,7 +238,7 @@ class ProcessEnviFile():
             Edges of the square (row_start, row_end, col_start, col_end)
         mode : str
             Mode for calculating the "mean spectrum". Possible values:  median,
-            mean, max, max10 (= maximum of the top 10 pixels).
+            mean, max, max10 (= maximum of the top 10 pixels), std.
 
         Returns
         -------
@@ -252,8 +262,7 @@ class ProcessEnviFile():
 
     def getCalibratedSpectra(self,
                              spectra: pd.DataFrame,
-                             spectralon: pd.DataFrame,
-                             spectralon_factor: float = 0.95) -> pd.DataFrame:
+                             spectralon: pd.DataFrame) -> pd.DataFrame:
         """
         Get calibrated spectra.
 
@@ -263,8 +272,6 @@ class ProcessEnviFile():
             Not-calibrated spectra
         spectralon : pd.DataFrame
             Spectrum of the spectralon (white reference)
-        spectralon_factor : float, optional (default=0.95)
-            Factor of how much solar radiation the spectralon reflects.
 
         Returns
         -------
@@ -278,7 +285,7 @@ class ProcessEnviFile():
             return getCalibratedSpectrum(
                 soil=x,
                 spectralon=spectralon[self.wavelengths],
-                spectralon_factor=spectralon_factor)
+                spectralon_factor=self.spectralon_factor)
 
         new_spectra[self.wavelengths] = spectra[self.wavelengths].apply(
             getCalibratedSpectrumSimple, axis=1, raw=True)

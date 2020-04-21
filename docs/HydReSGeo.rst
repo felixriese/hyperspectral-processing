@@ -67,7 +67,25 @@ described in [HydReSGeo]_.
 
 Overall, we divide the hyperspectral data into folders, which include images
 (= files = datapoints), which consist of different zones (= measurement
-fields). In the following, the files in :bash:`rs/masks/` are described.
+fields). The fields/zones in each hyperspectral and LWIR image are named as
+A1-D2 or zone1-zone8 as follows:
+
+.. code:: python3
+
+    zone_dict = {
+            "A1": "zone1",
+            "A2": "zone2",
+            "B1": "zone3",
+            "B2": "zone4",
+            "C1": "zone5",
+            "C2": "zone6",
+            "D1": "zone7",
+            "D2": "zone8"}
+
+Over the three measurement days of the HydReSGeo dataset, the sensor
+positions and angles of the hyperspectral camera and LWIR camera change. This
+change is taken into account by including time-dependend masks in
+:bash:`rs/masks/`, which are described in the following.
 
 :bash:`hyp_masks.csv`
 ^^^^^^^^^^^^^^^^^^^^^^^

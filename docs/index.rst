@@ -24,6 +24,8 @@ This module includes classes, functions, and scripts for the processing.
 
    First Steps <firststeps.rst>
 
+   Configuration <configuration.rst>
+
    HydReSGeo Dataset <HydReSGeo.rst>
 
    Citation <citation.rst>

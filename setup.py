@@ -3,6 +3,7 @@
 # Copyright (c) 2020 by Felix M. Riese.
 # All rights reserved.
 
+import requests
 import setuptools
 
 with open("README.rst", "r") as f:
@@ -12,6 +13,12 @@ with open('CHANGELOG.rst', 'rb') as f:
     changelog = f.read().decode('utf-8')
 
 long_description = '\n\n'.join((readme, changelog))
+
+# download IRUtils.py
+ir_url = ("https://raw.githubusercontent.com/felixriese/"
+          "thermal-image-processing/master/tiprocessing/IRUtils.py")
+ir_file = requests.get(ir_url)
+open("hprocessing/IRUtils.py", "wb").write(ir_file.content)
 
 setuptools.setup(
     name="hprocessing",

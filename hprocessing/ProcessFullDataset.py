@@ -12,6 +12,10 @@ from tqdm import tqdm
 from .ProcessEnviFile import (ProcessEnviFile, getEnviFile, getEnviHeader,
                               readEnviHeader)
 
+if not os.path.isfile('./IRUtils.py'):
+    print("The file IRUtils.py is missing. Please download it via:")
+    print("> wget -P hprocessing/ https://raw.githubusercontent.com/"
+          "felixriese/thermal-image-processing/master/tiprocessing/IRUtils.py")
 from .IRUtils import getIRDataFromMultipleZones
 
 
@@ -48,6 +52,12 @@ class ProcessFullDataset():
     time_window_width : int, optional (default=6)
         Time window width to match the hyperspectral image to the soil moisture
         data. The unit of the time window width is minutes.
+    hyp_stat_mode : str
+        Mode for calculating the "mean spectrum" of a hyperspectral image.
+        Possible values: median, mean, max, max10 (= maximum of the top 10
+        pixels), std.
+    hyp_spectralon_factor : float, optional (default=0.95)
+        Factor of how much solar radiation the spectralon reflects.
     verbose : int, optional (default=0)
         Controls the verbosity.
 
@@ -71,6 +81,8 @@ class ProcessFullDataset():
                  grid: tuple = (1, 1),
                  imageshape: tuple = (50, 50),
                  time_window_width: int = 6,
+                 hyp_stat_mode: str = "median",
+                 hyp_spectralon_factor: float = 0.95,
                  verbose=0):
         """Initialize ProcessDataset instance."""
         self.hyp_hdr_path = hyp_hdr_path
@@ -84,6 +96,8 @@ class ProcessFullDataset():
         self.grid = grid
         self.imageshape = imageshape
         self.time_window_width = time_window_width
+        self.hyp_stat_mode = hyp_stat_mode
+        self.hyp_spectralon_factor = hyp_spectralon_factor
         self.verbose = verbose
 
         # get Envi files
@@ -110,8 +124,6 @@ class ProcessFullDataset():
         self.zone_dict = {
             "A1": "zone1", "A2": "zone2", "B1": "zone3", "B2": "zone4",
             "C1": "zone5", "C2": "zone6", "D1": "zone7", "D2": "zone8"}
-        # "zone1": "A1", "zone2": "A2", "zone3": "B1", "zone4": "B2",
-        # "zone5": "C1", "zone6": "C2", "zone7": "D1", "zone8": "D2"}
 
     def process(self) -> pd.DataFrame:
         """
@@ -152,7 +164,9 @@ class ProcessFullDataset():
             positions=self.positions_hyp,
             index_of_meas=self.index_of_meas,
             mask=self.mask,
-            grid=self.grid)
+            grid=self.grid,
+            stat_mode=self.hyp_stat_mode,
+            spectralon_factor=self.hyp_spectralon_factor)
         df_hyp = envi_processor.getMultipleSpectra()
 
         # add datetime as column
@@ -380,6 +394,9 @@ def getAllSoilMoistureSensors():
     """
     Get information about the soil moisture sensors.
 
+    The sensor data is taken from the HydReSGeo dataset. For other datasets,
+    the dictionary `sensors` has to be modified.
+
     Returns
     -------
     sensors : dict
@@ -514,6 +531,14 @@ def readConfig(config_path: str,
     # read out time window width
     config_dict["time_window_width"] = int(
         config["Process"]["time_window_width"])
+
+    # read out hyperspectral spectralon factor
+    config_dict["hyp_spectralon_factor"] = float(
+        config["Process"]["hyp_spectralon_factor"])
+
+    # read out hyperspectral spectralon factor
+    config_dict["hyp_stat_mode"] = str(
+        config["Process"]["hyp_stat_mode"])
 
     return config_dict
 
