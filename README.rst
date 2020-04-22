@@ -1,9 +1,12 @@
-.. image:: https://img.shields.io/github/license/felixriese/hyperspectral-processing
-    :target: LICENSE
-    :alt: GitHub
 .. image:: https://api.codacy.com/project/badge/Grade/94144b07a2114b7b8777ddec80485fe9
     :target: https://www.codacy.com/manual/felixriese/hyperspectral-processing?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=felixriese/hyperspectral-processing&amp;utm_campaign=Badge_Grade
     :alt: Codacy
+.. image:: https://travis-ci.org/felixriese/hyperspectral-processing.svg?branch=master
+    :target: https://travis-ci.org/felixriese/hyperspectral-processing
+    :alt: Travis CI
+.. image:: https://codecov.io/gh/felixriese/hyperspectral-processing/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/felixriese/hyperspectral-processing
+    :alt: Codecov
 .. image:: https://readthedocs.org/projects/hyperspectral-processing/badge/?version=latest
     :target: https://hyperspectral-processing.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status

@@ -4,7 +4,7 @@ Testfiles
 .. role:: bash(code)
    :language: bash
 
-The test files included in this repository are adapted from the HydReSGeo
+The test files included in this repository are adapted from the [HydReSGeo]_
 dataset. The following files are included:
 
 - :bash:`data/testfiles/hyd/TDR.csv`
@@ -12,6 +12,9 @@ dataset. The following files are included:
   _highres.hdr, jpg, and _PAN.tiff.
 - :bash:`data/testfiles/lwir/ir_export_20170815_P0000000_001_17-56-00.csv`
 - :bash:`data/testfiles/masks/masks_test.csv`
+
+These test files are included in this repository with the permission of the
+authors of [HydReSGeo]_.
 
 References
 ----------
