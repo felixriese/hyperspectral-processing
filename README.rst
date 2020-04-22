@@ -11,8 +11,8 @@
 Hyperspectral Processing Scripts for the HydReSGeo Dataset
 ============================================================
 
-This repository is a placeholder and will be filled with the hyperspectral
-processing scripts of the HydReSGeo dataset over the next months.
+This repository includes the processing scripts of the HydReSGeo dataset
+for the hyperspectral, LWIR, and soil moisture data.
 
 :License:
     `3-Clause BSD license <LICENSE>`_
