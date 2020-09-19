@@ -1,3 +1,6 @@
+.. role:: bash(code)
+   :language: bash
+
 .. image:: https://api.codacy.com/project/badge/Grade/94144b07a2114b7b8777ddec80485fe9
     :target: https://www.codacy.com/manual/felixriese/hyperspectral-processing?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=felixriese/hyperspectral-processing&amp;utm_campaign=Badge_Grade
     :alt: Codacy
@@ -43,6 +46,8 @@ Exemplary notebooks
 
 - `Example_Plots.ipynb <notebooks/Example_Plots.ipynb>`_
 - `Process_HydReSGeo_Dataset.ipynb <notebooks/Process_HydReSGeo_Dataset.ipynb>`_
+
+----
 
 Citation
 ---------------------------------------
@@ -106,3 +111,11 @@ Netherlands, 2018, pp. 1–5. `DOI:10.1109/WHISPERS.2018.8747076 <https://arxiv.
 [6] S. Keller, Fusion hyperspektraler, LWIR- und Bodenradar-Daten mit
 maschinellen Lernverfahren zur Bodenfeuchteschätzung, 5th ed. Wichmann, Berlin,
 2019, p. 217–250.
+
+----
+
+To do:
+------
+- [ ] Include plots with masks and bars into the documentation
+- [ ] Speed-up the script by opening dataframes only once
+- [ ] Describe data from :bash:`rs/hyp/` and :bash:`rs/lwir/` in the documentation
